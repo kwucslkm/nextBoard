@@ -99,10 +99,7 @@ export default function RegisterForm() {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             또는{' '}
-            <Link
-              href="/login"
-              className="font-medium text-primary-600 hover:text-primary-500"
-            >
+            <Link href="/login" className="font-medium text-primary-600 hover:text-primary-500" >
               로그인
             </Link>
           </p>
