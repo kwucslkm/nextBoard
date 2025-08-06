@@ -54,6 +54,7 @@ npm install
 ```bash
 cp .env.example .env.local
 # .env.local 파일을 편집하여 실제 값으로 변경
+DATABASE_URL="postgresql://postgres:password@localhost:5432/nextboard"
 ```
 
 ### 4. PostgreSQL 컨테이너 실행
