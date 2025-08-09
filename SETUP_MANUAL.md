@@ -30,7 +30,7 @@ npm install -D @types/bcryptjs @types/jsonwebtoken
 ### 2.1 .env.example 파일 생성
 ```bash
 # Database
-DATABASE_URL="postgresql://username:password@localhost:5432/nextboard"
+DATABASE_URL="postgresql://postgres:password@localhost:5432/nextboard"
 
 # JWT
 JWT_SECRET="your-super-secret-jwt-key"
