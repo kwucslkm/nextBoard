@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import { validateEmail } from '@/lib/utils'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({

@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import { validateEmail, validatePassword } from '@/lib/utils'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function RegisterForm() {
   const [formData, setFormData] = useState({
@@ -77,14 +77,15 @@ export default function RegisterForm() {
       })
 
       const data = await response.json()
-
+      console.log(" === 회원가입 성공 1 = ",data.success, data.message);
+      alert(data.message+'빽에서온거' || ' === 회원가입 성공 2 = '+ data.success+ data.message);
       if (response.ok) {
-        router.push('/login?message=회원가입이 완료되었습니다. 로그인해주세요.')
+        router.push('/login?message=회원가입이 완료되었습니다. 로그인해주세요. 33')
       } else {
-        setErrors({ general: data.message || '회원가입에 실패했습니다.' })
+        setErrors({ general: data.message || '회원가입에 실패했습니다. 44' })
       }
     } catch (error) {
-      setErrors({ general: '서버 오류가 발생했습니다.' })
+      setErrors({ general: '서버 오류가 발생했습니다. 5' })
     } finally {
       setIsLoading(false)
     }

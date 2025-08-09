@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/db'
 import { hashPassword } from '@/lib/auth'
+import { prisma } from '@/lib/db'
 import { validateEmail, validatePassword } from '@/lib/utils'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
 
     if (existingUser) {
       return NextResponse.json(
-        { success: false, message: '이미 존재하는 이메일입니다.' },
+        { success: false, message: '이미 존재하는 이메일입니다. 99' },
         { status: 400 }
       )
     }
@@ -66,15 +66,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: true, 
-        message: '회원가입이 완료되었습니다.',
+        message: '회원가입이 완료되었습니다. 6',
         data: user 
       },
       { status: 201 }
     )
   } catch (error) {
-    console.error('Register error:', error)
+    console.error('Register error: 7 ', error)
     return NextResponse.json(
-      { success: false, message: '서버 오류가 발생했습니다.' },
+      { success: false, message: '서버 오류가 발생했습니다. 8 ' },
       { status: 500 }
     )
   }
