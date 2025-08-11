@@ -1,9 +1,10 @@
 // app/layout.tsx
+import Footer from '@/components/layout/Footer'
+import Login from '@/components/layout/Login'
+import Nav from '@/components/layout/Nav'
 import type { Metadata } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 
 const noto = Noto_Sans_KR({
   subsets: ['latin'],
@@ -35,7 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <a href="#content" className="sr-only focus:not-sr-only">본문으로 건너뛰기</a>
         <div className="min-h-screen flex flex-col">
-          <Header />
+          <Nav />
+          <Login />
           <main id="content" className="flex-1">
             {children}
           </main>
