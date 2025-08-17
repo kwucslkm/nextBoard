@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-export default function Header() {
+export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
 
@@ -55,15 +55,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* User Menu */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={handleLogout}
-              className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-            >
-              로그아웃
-            </button>
-          </div>
+          
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -102,23 +94,21 @@ export default function Header() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
-                href="/"
+                href="/" onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsMenuOpen(false)}
               >
                 홈
               </Link>
               <Link
-                href="/members"
+                href="/members" onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsMenuOpen(false)}
               >
                 회원 관리
               </Link>
               <Link
-                href="/board"
+                href="/board" onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsMenuOpen(false)}
+                
               >
                 게시판
               </Link>
