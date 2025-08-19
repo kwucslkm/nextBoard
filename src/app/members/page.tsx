@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { User} from '../../types'
-import Memberlist from '@/components/member/Memberlist';
+import { prisma } from "@/lib/db";
+import MemberList from "@/components/member/Memberlist";
+import { User } from "@/types";
 
-export default async function members(){
-  const members: User[] = await prisma?.user.findMany();
-  return <Memberlist members={members} />;
+export default async function MembersPage() {
+  const members: User[] = await prisma.user.findMany({ orderBy: { createdAt: "desc" } });
+  return <MemberList members={members} />;
 }
