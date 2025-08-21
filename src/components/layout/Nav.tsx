@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import Login from './Login'
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -34,7 +35,7 @@ export default function Nav() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 flex justify-center">
+          <nav className="hidden md:flex space-x-8 flex justify-between">
             <Link href="/" className="text-gray-900 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" >
               홈
             </Link>
@@ -45,8 +46,9 @@ export default function Nav() {
               게시판
             </Link>
           </nav>
-
-          
+          <div>알림</div>
+          {/* SHOWLOGIN RESISTOR */}
+          {/* <div><Login/></div> */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
